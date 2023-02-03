@@ -1,20 +1,21 @@
 import Header from "@/components/Header";
 import Link from "next/link";
-import { FC, ReactElement } from "react";
+import { FC, ReactNode,  } from "react";
 
 interface BaseLayoutProps {
-  children: ReactElement;
+  children: ReactNode;
 }
+
+const footerItemlist: Array<{ name: string; value: string }> = [
+  { name: "About", value: "about" },
+  { name: "Projects", value: "projects" },
+  { name: "Speaking", value: "speaking" },
+  { name: "Uses", value: "uses" },
+];
+
 
 const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
 
-
-  const footerItemlist: Array<{ name: string; value: string }> = [
-    { name: "About", value: "about" },
-    { name: "Projects", value: "projects" },
-    { name: "Speaking", value: "speaking" },
-    { name: "Uses", value: "uses" },
-  ];
   return (
     <>
       <div className="fixed inset-0 flex justify-center sm:px-8">

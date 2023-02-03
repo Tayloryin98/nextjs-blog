@@ -1,15 +1,22 @@
-
 import dayjs from "dayjs";
 import Link from "next/link";
 import { FC } from "react";
 
+export interface ArticleIntl{
+  _id: string;
+  title: string;
+  content: string;
+  published: number;
+};
+
 export interface ArticleProps {
-  _id: string
-  title: string
-  content: string
-  published: number
+  article: ArticleIntl
+  timeShow?: string;
 }
-const Article: FC<ArticleProps> = ({ _id, title, content, published }) => {
+const Article: FC<ArticleProps> = ({
+  article: { _id, title, content, published },
+  timeShow,
+}) => {
   return (
     <article className="group relative flex flex-col items-start">
       <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
@@ -19,7 +26,9 @@ const Article: FC<ArticleProps> = ({ _id, title, content, published }) => {
           <span className="relative z-10">{title}</span>
         </Link>
       </h2>
-      <time className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-400 dark:text-zinc-500">
+      <time
+        className={`relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-400 dark:text-zinc-500 ${timeShow}`}
+      >
         <span className="absolute inset-y-0 left-0 flex items-center">
           <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
         </span>
@@ -28,7 +37,7 @@ const Article: FC<ArticleProps> = ({ _id, title, content, published }) => {
       <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
         {content}
       </p>
-      <div className="items-center relative z-10 mt-4 flex text-sm font-medium text-teal-500">
+      <div className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
         Read Article
         <svg
           viewBox="0 0 16 16"

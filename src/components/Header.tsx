@@ -7,14 +7,16 @@ import { FC, Fragment } from "react";
 import { ChevronDownIcon, SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 
 interface HeaderProps {}
+
+const HeaderItemList = [
+  { name: "About", value: "about" },
+  { name: "Articles", value: "articles" },
+  { name: "Projects", value: "projects" },
+  { name: "Speaking", value: "speaking" },
+  { name: "Uses", value: "uses" },
+];
+
 const Header: FC<HeaderProps> = ({}) => {
-  const HeaderItemList = [
-    { name: "About", value: "about" },
-    { name: "Articles", value: "articles" },
-    { name: "Projects", value: "projects" },
-    { name: "Speaking", value: "speaking" },
-    { name: "Uses", value: "uses" },
-  ];
   const { theme, setTheme } = useTheme();
 
   return (
