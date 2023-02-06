@@ -9,7 +9,6 @@ interface BaseLayoutProps {
 const footerItemlist: Array<{ name: string; value: string }> = [
   { name: "About", value: "about" },
   { name: "Projects", value: "projects" },
-  { name: "Speaking", value: "speaking" },
   { name: "Uses", value: "uses" },
 ];
 

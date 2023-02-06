@@ -15,6 +15,7 @@ import p3 from "public/photoGallary/image-3.webp";
 import p4 from "public/photoGallary/image-4.webp";
 import p5 from "public/photoGallary/image-5.webp";
 import BaseContainer from "@/layouts/BaseContainer";
+import PageHeader from "@/components/PageHeader";
 
 //文章通过请求获得
 const articleList: Array<ArticleIntl> = [
@@ -99,6 +100,12 @@ const photoList: Array<PhotoGallaryProps> = [
   },
 ];
 
+const pageHeader = {
+  title: "Software designer, founder, and amateur astronaut.",
+  summary:
+    "I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+};
+
 const Home: NextPageWithLayout = () => {
   //订阅邮箱提交
   const handalEmailSubscrible = () => {
@@ -108,15 +115,7 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <BaseContainer>
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          Software designer, founder, and amateur astronaut.
-        </h1>
-        <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          I’m Spencer, a software designer and entrepreneur based in New York
-          City. I’m the founder and CEO of Planetaria, where we develop
-          technologies that empower regular people to explore space on their own
-          terms.
-        </p>
+        <PageHeader header={pageHeader}></PageHeader>
         <div className="mt-6 flex gap-6">
           <Link href="/" className="-p-1 group -m-1">
             <WeiXin

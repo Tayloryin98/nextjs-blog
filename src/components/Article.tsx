@@ -2,15 +2,15 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { FC } from "react";
 
-export interface ArticleIntl{
+export interface ArticleIntl {
   _id: string;
   title: string;
   content: string;
   published: number;
-};
+}
 
 export interface ArticleProps {
-  article: ArticleIntl
+  article: ArticleIntl;
   timeShow?: string;
 }
 const Article: FC<ArticleProps> = ({

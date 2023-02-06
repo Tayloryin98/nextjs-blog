@@ -16,6 +16,7 @@ const liLinKStyle =
 const liSvgStyle =
   "h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500";
 
+
 const About: NextPageWithLayout = () => {
   return (
     <BaseContainer>

@@ -1,4 +1,5 @@
 import Article, { ArticleIntl, ArticleProps } from "@/components/Article";
+import PageHeader from "@/components/PageHeader";
 import BaseContainer from "@/layouts/BaseContainer";
 import BaseLayout from "@/layouts/BaseLayout";
 import dayjs from "dayjs";
@@ -28,19 +29,18 @@ const articleList: Array<ArticleIntl> = [
   },
 ];
 
+const pageHeader = {
+  title:
+    "Writing on software design, company building, and the aerospace industry.",
+  summary:
+    "All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.",
+  maxWidth: true,
+};
+
 const ArticlePage: NextPageWithLayout = () => {
   return (
     <BaseContainer>
-      <header className="max-w-2xl">
-        <h1 className="tracking-light text-4xl font-bold text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          Writing on software design, company building, and the aerospace
-          industry.
-        </h1>
-        <p className="tex-zinc-600 dark-zinc-400 mt-6 text-base">
-          All of my long-form thoughts on programming, leadership, product
-          design, and more, collected in chronological order.
-        </p>
-      </header>
+      <PageHeader header={pageHeader}></PageHeader>
       <div className="mt-16 sm:mt-20">
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
@@ -56,7 +56,7 @@ const ArticlePage: NextPageWithLayout = () => {
                       timeShow={"block md:hidden"}
                     ></Article>
                   </div>
-                  <time className="text-sm relative z-10 order-first mt-1 mb-3 hidden items-center text-zinc-400 dark:text-zinc-500 md:block">
+                  <time className="relative z-10 order-first mt-1 mb-3 hidden items-center text-sm text-zinc-400 dark:text-zinc-500 md:block">
                     {dayjs(item.published as number).format("MMMM DD, YYYY")}
                   </time>
                 </article>

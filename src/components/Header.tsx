@@ -12,7 +12,6 @@ const HeaderItemList = [
   { name: "About", value: "about" },
   { name: "Articles", value: "articles" },
   { name: "Projects", value: "projects" },
-  { name: "Speaking", value: "speaking" },
   { name: "Uses", value: "uses" },
 ];
 
